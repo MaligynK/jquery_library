@@ -1,0 +1,57 @@
+#mkj_library_page p{
+    margin: 0;
+}
+
+#mkj_library_page .container{
+    padding-top: 30px;
+}
+
+.mkj-block{
+    border: solid 2px green;
+    padding: 15px;
+    position: relative;
+}
+
+.mkj-book-elem{
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.mkj-book-elem .mkj-remove,
+.mkj-book-elem .mkj-edit{
+    position: absolute;
+    right: 10px;
+    color: green;
+    width: 20px;
+    height: 20px;
+    border: solid 1px green;
+    text-align: center;
+    display: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mkj-book-elem .mkj-remove{
+    top: 10px;
+}
+
+.mkj-book-elem .mkj-edit{
+    top: 35px;
+}
+
+.mkj-view-elem{
+    padding: 0 0 20px;
+}
+
+.mkj-view-elem p{
+    padding-bottom: 10px;
+}
+
+.mkj-view-elem input{
+    width: 100%;
+    height: 30px;
+}
+
+#mkj_book_container{
+    padding-top: 30px;
+}

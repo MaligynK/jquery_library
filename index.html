@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="index_styles.css">
+
+    <script src="lib/jquery-3.2.1.js"></script>
+    <script src="index_script.js"></script>
+
+</head>
+<body id="mkj_library_page">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="mkj-block mkj-view-block">
+
+                    <div class="row">
+
+                        <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12">
+                            <div class="mkj-view-elem">
+                                <p>Название</p>
+                                <input id="mkj_book_name" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12">
+                            <div class="mkj-view-elem">
+                                <p>Автор</p>
+                                <input id="mkj_book_author" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12">
+                            <div class="mkj-view-elem">
+                                <p>Год издания</p>
+                                <input id="mkj_book_date" type="number" step="1" min="0">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12">
+                            <div class="mkj-view-elem">
+                                <p>Количество страниц</p>
+                                <input id="mkj_book_pages" type="number">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <button onclick="save_book()">Сохранить</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="mkj-block">Сортировка</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="mkj-block">Поиск</div>
+                    </div>
+                </div>
+
+
+                <div id="mkj_book_container" class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <div class="mkj-block mkj-book-elem">
+                            <p class="mkj-book-title">«Ntcn»</p>
+                            <p class="mkj-book-author">Nicolas</p>
+                            <p class="mkj-book-date">1557</p>
+
+                            <div class="mkj-edit">
+                                <div class="glyphicon glyphicon-pencil"></div>
+                            </div>
+
+                            <div class="mkj-remove">
+                                <div class="glyphicon glyphicon-remove"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
