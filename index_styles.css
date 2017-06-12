@@ -82,6 +82,11 @@
     padding-bottom: 10px;
 }
 
+.mkj-view-elem .text-danger{
+    font-size: 12px;
+    display: none;
+}
+
 @media(max-width: 767px){
 
     .mkj-book-elem .mkj-block{
@@ -99,5 +104,10 @@
         background: #95e098;
         padding-top: 10px;
     }
+
+    .mkj-view-elem{
+        padding-bottom: 10px;
+    }
+
 
 }

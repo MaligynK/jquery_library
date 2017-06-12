@@ -21,29 +21,33 @@
 
                     <div class="row">
 
-                        <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
-                            <div class="mkj-view-elem">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="mkj-view-elem mkj-view-name">
                                 <p>Название</p>
                                 <input id="mkj_book_name" type="text">
+                                <p class="text-danger">Слишком короткое название (не меньше 3 символов)</p>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
-                            <div class="mkj-view-elem">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="mkj-view-elem mkj-view-author">
                                 <p>Автор</p>
                                 <input id="mkj_book_author" type="text">
+                                <p class="text-danger">Слишком короткое имя автора (не меньше 4 символов)</p>
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
-                            <div class="mkj-view-elem">
+                            <div class="mkj-view-elem mkj-view-date">
                                 <p>Год издания</p>
                                 <input id="mkj_book_date" type="number" step="1" min="0">
+                                <p class="text-danger">Введите корректную дату</p>
                             </div>
                         </div>
 
                         <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
-                            <div class="mkj-view-elem">
+                            <div class="mkj-view-elem mkj-view-pages">
                                 <p>Количество страниц</p>
                                 <input id="mkj_book_pages" type="number" step="1" min="1">
+                                <p class="text-danger">Количество страниц не мошен быть отрицательным или дробным</p>
                             </div>
                         </div>
 
