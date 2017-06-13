@@ -31,6 +31,14 @@ class Book {
             date: this._date
         }
     }
+    check_name(name){
+        // если name находится в this._name, показываем, иначе скрываем
+        if(this._name.toLowerCase().indexOf(name.toLowerCase()) > -1){
+            this._html_elem.show();
+        }else{
+            this._html_elem.hide();
+        }
+    }
     edit(){
         // редактирование книги
         // делаем ее текущей
@@ -214,6 +222,14 @@ let add_book = function() {
 let save_books_data = function () {
     // сохранение информации о книгах в локальном хранилище
     localStorage.saved_books = JSON.stringify(books_data);
+};
+
+let search_name = function(){
+    // поиск по имени
+    let str_search = $('#mkj_search_input').val() || '';
+    for(let i in books){
+        books[i].check_name(str_search);
+    }
 };
 
 $(document).ready(function () {
