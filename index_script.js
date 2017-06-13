@@ -9,6 +9,8 @@ let books = [];
 // список данных для сохранения в localStorage
 let books_data = [];
 
+// сортировка по...
+let book_sorting = '';
 
 // Обеъкт книги с сылкой на DOM-элемент
 class Book {
@@ -20,6 +22,12 @@ class Book {
     get id(){
         // id объекта
         return this._id;
+    }
+    get name(){
+        return this._name;
+    }
+    get date(){
+        return this._date;
     }
     get json_data(){
         // информация, которую сохраняем в localStorage
@@ -140,7 +148,7 @@ class Book {
 
 }
 
-let check_book_eroors = function () {
+let check_book_errors = function (name, author, date, pages) {
     // проверяем данные в редактируемой книге на ошибки
     // возвращает true, если ошибки есть
     let current_date = new Date();
@@ -188,7 +196,7 @@ let save_book = function(){
     let pages = $('#mkj_book_pages').val();
     let date = $('#mkj_book_date').val();
 
-    if(check_book_eroors()){
+    if(check_book_errors(name, author, date, pages)){
         // ошибка, выходим без сохранения
         return;
     }
@@ -200,6 +208,7 @@ let save_book = function(){
             if(books_data[i].id == current_book.id){
                 books_data[i] = current_book.json_data;
                 save_books_data();
+                sort_again();
                 break;
             }
         }
@@ -211,6 +220,7 @@ let save_book = function(){
     books.push(book);
     books_data.push(book.json_data);
     save_books_data();
+    sort_again();
 };
 
 let add_book = function() {
@@ -230,6 +240,30 @@ let search_name = function(){
     for(let i in books){
         books[i].check_name(str_search);
     }
+};
+
+let sort_books = function(sort_attr){
+    // сортировка
+    if(sort_attr == book_sorting){
+        return;
+    }
+    book_sorting = sort_attr;
+    sort_attr = '.mkj-book-' + sort_attr;
+    let book_container = $('#mkj_book_container');
+    book_container.find('.mkj-book-elem').sort(function (a, b) {
+        // return b[sort_attr] < a[sort_attr] ? 1 : -1;
+        return $(b).find(sort_attr).text().toLowerCase() < $(a).find(sort_attr).text().toLowerCase();
+    }).appendTo(book_container);
+};
+
+let sort_again = function(){
+    // список изменен, необходимо вновь отсортировать
+    if(!book_sorting) {
+        return;
+    }
+    let temp_sort = book_sorting;
+    book_sorting = '';
+    sort_books(temp_sort);
 };
 
 $(document).ready(function () {
